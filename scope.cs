@@ -19,7 +19,6 @@ public class DegiskenlerinYasamAlani
     public void Main()
     {
         int k = b + 1; // doesn't give an error in this scope because b == 0
-        Console.WriteLine(k);
     }
 
 }
