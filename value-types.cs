@@ -94,7 +94,19 @@ Console.WriteLine("-----------------------------------------------------------")
     Console.WriteLine(metin2);
     Console.WriteLine(metin3);
 
-    // String aslında bi char arrayidir
+    if(string.IsNullOrEmpty(str))
+    {
+        // Condition
+    }
+
+    // or you can put an exclamation mark to check if it's not null or empty
+
+    if(!string.IsNullOrEmpty(str))
+    {
+        // Condition
+    }
+
+    // String aslında bi char arrayidir (BENCE ÖNEMLİ)
 #endregion
 
 Console.WriteLine("-----------------------------------------------------------");
