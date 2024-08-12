@@ -106,6 +106,8 @@ Console.WriteLine("-----------------------------------------------------------")
         // Condition
     }
 
+    TempData["foo"] = "lorem ipsum \"dolor\" sit amet"; // This shows the user double quote
+
     // String aslında bi char arrayidir (BENCE ÖNEMLİ)
 #endregion
 
