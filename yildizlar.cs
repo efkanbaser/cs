@@ -15,3 +15,15 @@ for (int i = 1; i < kacSatir; i++)
     }
 }
 Console.WriteLine(yildizlar);
+
+﻿string yildizlar1 = "";
+for (int i = 0; i < kacSatir; i++)
+{
+    for (int j = 0; j < i; j++)
+    {
+        yildizlar1 += "*";
+  
+    }
+    yildizlar1 += "*\n";
+}
+Console.WriteLine(yildizlar1);
