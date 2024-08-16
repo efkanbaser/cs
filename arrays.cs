@@ -17,7 +17,7 @@ foreach (int num in sayilar)
 
 // One disadv. of arrays is that you have to specify the amount of items it's going to contain while defining them.
 // One adv. of arrays that it's type safe
-
+// You can learn the amount of elements in an array using length property
 
 // 2nd way of defining arrays
 int[] sayilar1 = new int[] { 3, 4, 5, 1, 6, 12, 6, 4, 2, 13 };
@@ -37,6 +37,7 @@ int[] sayilar3 = { 2, 3, 4, 1, 2, 3, 5, 6, 1, 6 }; // Anonymous type
 
 
 // This is a non-generic list.
+// In collections you learn the amount of elements with count property 
 ArrayList list = new ArrayList();
 list.Add(10);
 list.Add("Efkan");
