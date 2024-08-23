@@ -26,7 +26,16 @@ for (int i = 0; i < names.Length; i++)
     msg += names[i] + "\n";
 }
 
+// Removes "Ef" and gets appends "kan" to nameSubstring. 
+string nameSubstring = name.Substring(2);
+// Removes "Ef" and gets appends "ka" to nameSubstring. 
+nameSubstring = name.Substring(2, 2);
 
+char[] nameArr = name.ToCharArray();
+string nameUpper = name.ToUpper();
+string nameLower = name.ToLower();
 
-
-
+"            efkan".TrimStart();
+"efkan            ".TrimEnd();
+"      efkan      ".Trim();
+string padding = "45".PadLeft(8, '0');
