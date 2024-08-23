@@ -16,6 +16,12 @@ b = Math.E;
 b = Math.Sqrt(16);
 b = Math.Exp(2);
 b = Math.Log(10); // ln10, not actually log10
-b = Math.Log10(10); 
+b = Math.Log10(10);
+
+b = Math.Sign(-5000); // İçerdeki sayının işaretini döner, yani -1, 0, 1 döner
+b = Math.Truncate(500015120.132512351235125135312); // Virgülden sonrasını tamamen siler
+double c = System.Numerics.Complex.Sqrt(-16).Phase;
+Console.WriteLine(c);
+                                                  
 
 
