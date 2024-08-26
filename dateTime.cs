@@ -37,5 +37,17 @@ metin = ts.Days + "";
 metin = ts.TotalDays + "";
 metin = ts.Hours + "";
 
+// dd : sayısal olarak gün bilgisi verir
+// dddd : metinsel olarak gün bilgisi verir 
+// MM : sayısal olarak ay bilgisi verir
+// MMMM : metinsel olarak ay bilgisi verir
+// yy : kısa yıl bilgisi verir (24)
+// yyyy : uzun yıl bilgisi verir 
 
+// hh : 12 saat üzerinde saati verir
+// HH : 24 saat üzerinde saati verir
+// mm : dakika bilgisi verir
+// ss : saniyeyi verir
+
+metin = dt2.ToString("dddd, dd MMMM yyyy, HH:mm:ss");
 
