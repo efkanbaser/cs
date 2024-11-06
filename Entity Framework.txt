@@ -49,19 +49,19 @@ ctx.SaveChanges();
 
 
 
-Category category = ctx.Categories.Single(x => x.CategoryID == 1); 				// WORKS
-Category category = ctx.Categories.Single(x => x.CategoryID > 5); 				// ERROR
-Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 999); 	// ERROR
+Category category = ctx.Categories.Single(x => x.CategoryID == 1);				// WORKS
+Category category = ctx.Categories.Single(x => x.CategoryID > 5);				// ERROR
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 999);	// ERROR
 
-Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 1);  	// WORKS
-Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID > 5); 		// ERROR
-Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 999); 	// WORKS {doesn't explode on null values but category returns null so be aware of that}
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 1);		// WORKS
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID > 5);		// ERROR
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 999);	// WORKS {doesn't explode on null values but category returns null so be aware of that}
 
 Category category = ctx.Categories.First(x => x.CategoryID == 1);				// WORKS
 Category category = ctx.Categories.First(x => x.CategoryID > 5);				// WORKS
-Category category = ctx.Categories.First(x => x.CategoryID == 999);  		  	// ERROR
+Category category = ctx.Categories.First(x => x.CategoryID == 999);				// ERROR
 
-Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);     	// WORKS
+Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);		// WORKS
 Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);		// WORKS
 Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);		// WORKS
 
