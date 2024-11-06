@@ -14,9 +14,9 @@ NorthwindEntities entity = new NorthwindEntities();
 dataGridView1.DatSource = entity.Categories.ToList();
 
 
-// IQuarable
+// IQueryable
 // IEnumerable
-dataGridView1.DatSource = entity.Categories; // select * from Categories ------"this is an IQuarable"
+dataGridView1.DatSource = entity.Categories; // select * from Categories ------"this is an IQueryable"
 dataGridView1.DatSource = entity.Categories.ToList(); // executes: select * from Categories -----"this is an IEnumerable"
 
 
@@ -31,6 +31,53 @@ dataGridView1.DatSource = 	from inc in entities.Categories
 // 2-Extension Method
 // => Lambda expression
 dataGridView1.DatSource = entities.Categories.Where(x => x.CategoryID > 4).ToList();
+
+
+IQueryable<Category> query = entities.Categories.Where(x => x.CategoryID > 4).OrderByDescending(x => x.CategoryID);
+
+
+
+// INSERT TO DATABASE
+NorthwindEntities ctx = new NorthwindEntities();
+Product product = new Product();
+product.ProductName = textBox1.Text;
+product.UnitsInStock = short.Parse(textBox2.Text);
+product.UnitPrice = decimal.Parse(textBox3.Text);
+
+ctx.Products.Add(product);
+ctx.SaveChanges();
+
+
+
+Category category = ctx.Categories.Single(x => x.CategoryID == 1); 				// WORKS
+Category category = ctx.Categories.Single(x => x.CategoryID > 5); 				// ERROR
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 999); 	// ERROR
+
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 1);  	// WORKS
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID > 5); 		// ERROR
+Category category = ctx.Categories.SingleOrDefault(x => x.CategoryID == 999); 	// WORKS {doesn't explode on null values but category returns null so be aware of that}
+
+Category category = ctx.Categories.First(x => x.CategoryID == 1);				// WORKS
+Category category = ctx.Categories.First(x => x.CategoryID > 5);				// WORKS
+Category category = ctx.Categories.First(x => x.CategoryID == 999);  		  	// ERROR
+
+Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);     	// WORKS
+Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);		// WORKS
+Category category = ctx.Categories.FirstOrDefault(x => x.CategoryID > 5);		// WORKS
+
+
+
+// Create a button, get an ID from user and give the item with that ID.
+NorthwindEntities ctx = new NorthwindEntities();
+
+int urunID = int.Parse(textBox5.Text);
+ctx.Products.SingleOrDefault(x => x.ProductID == urunID);
+
+
+
+
+
+
 
 
 
