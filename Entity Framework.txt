@@ -1,0 +1,49 @@
+// ADONET SYNTAX
+List<Personel> personeller = new List<Personel>();
+SqlDataReader dr = new SqlDataReader();
+while(dr.Read())
+{
+	Personel p = new Personel;
+	// ...
+}
+
+
+
+// Entity Framework
+NorthwindEntities entity = new NorthwindEntities();
+dataGridView1.DatSource = entity.Categories.ToList();
+
+
+// IQuarable
+// IEnumerable
+dataGridView1.DatSource = entity.Categories; // select * from Categories ------"this is an IQuarable"
+dataGridView1.DatSource = entity.Categories.ToList(); // executes: select * from Categories -----"this is an IEnumerable"
+
+
+Expression<Func<Category,bool>> predicate = y => y.CategoryID == 5;
+
+// 1-LINQ Query
+dataGridView1.DatSource = 	from inc in entities.Categories
+							where inc.CategoryID>4
+							select inc).ToList();
+
+
+// 2-Extension Method
+// => Lambda expression
+dataGridView1.DatSource = entities.Categories.Where(x => x.CategoryID > 4).ToList();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
